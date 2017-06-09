@@ -1,28 +1,64 @@
-Algoritmo ejercicio5
+Algoritmo cachipun
+	escribir "Ingrese su eleccion"
+	Escribir "[1] Piedra"
+	Escribir "[2] Papel"
+	Escribir "[3] Tijera"
+	Repetir
+		leer oper
+	Hasta Que oper < 4 y oper >0
 	
-	cachipun_azar= azar(3)
-	
-	Dimension cachipun(3)
-	cachipun[0]="piedra"
-	cachipun[1]="papel"
-	cachipun[2]="tijeras"
-	
-	Escribir "piedra, papel o tijeras"
-	Leer cachipan
+	segun oper hacer
+		1:
+			usuario = "Piedra"
+		2:
+			usuario = "Papel"
+		3:
+			usuario = "Tijera"
+	FinSegun
 	
 	Repetir
-		Si cachipun[cachipun_azar]==cachipan 
-			Entonces Escribir "empate"
-	Fin Si
-	Hasta Que cachipun[cachipun_azar]<>cachipan
+		eleccion <- azar(4)
+	Hasta Que eleccion < 4 y eleccion >0 
 	
-	Si cachipun[0] Entonces
-		acciones_por_verdadero
-	SiNo
-		acciones_por_falso
-	Fin Si
 	
-	Fin Si
+	Segun eleccion Hacer
+		1:
+			escribir "Eleccion del PC *PIEDRA*"
+			segun oper hacer
+				1:
+					resultado = "EMPATE"
+				2:
+					resultado = "USUARIO"
+				3:	
+					resultado = "PC"
+			FinSegun
+		2:
+			escribir "Eleccion del PC *PAPEL*" 
+			segun oper hacer
+				1:
+					resultado = "PC"
+				2:
+					resultado = "EMPATE"
+				3:	
+					resultado = "USUARIO"
+			FinSegun
+		3:
+			escribir "Eleccion del PC *TIJERA*"
+			segun oper hacer
+				1:
+					resultado = "USUARIO"
+				2:
+					resultado = "PC"
+				3:	
+					resultado = "EMPATE"
+			FinSegun
+	Fin Segun
+	
+	
+	escribir "eleccion del Usuario ", usuario
+	
+	escribir "EL GANADOR ES EL : " , resultado
+	
 	
 	
 FinAlgoritmo
